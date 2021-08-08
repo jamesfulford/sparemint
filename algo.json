@@ -1,0 +1,31 @@
+{
+  "steps": [
+    {
+      "kind": "conditional",
+      "expression": "nodes < 10",
+      "output": "connections",
+      "algorithm": {
+        "steps": [
+          {
+            "expression": "nodes * (nodes - 1) / 2",
+            "output": ""
+          }
+        ]
+      }
+    },
+    {
+      "kind": "conditional",
+      "expression": "nodes >= 10",
+      "output": "connections",
+      "algorithm": {
+        "steps": [
+          {
+            "expression": "nodes ** 2 > 1000 ? 1000 : nodes ** 2",
+            "output": ""
+          }
+        ]
+      }
+    },
+    { "expression": "connections", "output": ""}
+  ]
+}
